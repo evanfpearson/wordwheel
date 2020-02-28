@@ -15,8 +15,8 @@ def valid(word, centre_letter, outer_letters):
   return True
 
 def main(letters):
-  centre_letter = letters[0]
-  outer_letters = [char for char in letters[1:]]
+  centre_letter = letters[0].lower()
+  outer_letters = [char.lower() for char in letters[1:]]
   with open("dictionary.txt") as file:
     formatted_words = [word.strip().lower() for word in file.readlines()]
     valid_words = [word for word in formatted_words if valid(word, centre_letter, outer_letters)]
